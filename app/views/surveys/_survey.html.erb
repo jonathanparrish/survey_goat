@@ -1,0 +1,7 @@
+  <div class="survey-item pure-g" id="survey-<%= survey.id %>">
+    <div class="pure-u-3-4">
+    <div class="survey-name"><%= survey.title %></div>
+    <div class="survey-desc"><%= survey.description %></div>
+    <%= link_to 'Show', survey, remote: true, :class => "survey-link" %>
+    </div>
+  </div>

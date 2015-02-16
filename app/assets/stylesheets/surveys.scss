@@ -1,0 +1,211 @@
+// Place all the styles related to the Surveys controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#layout {
+  font-size: 1em;
+}
+
+#nav {
+  background-color: #27ae60;
+  font-family: 'Raleway';
+}
+
+.survey-item.pure-g {
+  position: relative;
+  border-bottom: 1px solid #757575;
+  border-right: 1px solid #E0E0E0;
+  max-width: 100%;
+  min-height: 50px;
+  background-color: #F5F5F5;
+  padding-top: 3em;
+}
+
+.survey-item.pure-g:hover {
+  background-color: white;
+  color: white;
+}
+
+.survey-item.pure-g.active {
+  background-color: white;
+  color: white;
+  border-left: 2px solid #1B5E20;
+  border-right: none;
+}
+
+.pure-u-3-4 {
+  padding-left: 2em;
+  font-size: 1.1em;
+}
+
+.pure-u-3-4 a {
+  width:100%;
+  height:100%;
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+}
+
+.nav-inner {
+  position: relative;
+}
+
+.pure-menu-heading {
+  text-align: center;
+  position: absolute;
+  max-width: 100%;
+  top: 3em;
+}
+
+.welcome {
+  color: white;
+  width: 1em;
+}
+
+#main {
+ width: 100%;
+}
+
+#main header {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.copylink {
+  padding: 1em;
+}
+
+.wrapper {
+  margin-left: 2em;
+  font-family: 'Raleway';
+}
+
+.showQuestionDiv {
+  margin: 2em;
+}
+
+#formTitleDiv {
+}
+
+.formWrapper {
+  font-family: 'Raleway';
+  padding: 3em;
+}
+
+.text {
+  width: 30%;
+}
+
+.new {
+  font-family: 'Raleway';
+  padding-left: 3em;
+}
+
+.pure-button {
+  position: relative;
+  padding: 1em;
+  background-color: #2ecc71;
+}
+
+.pure-button:hover {
+  background-color: white;
+}
+
+.pure-button a {
+  width:100%;
+  height:100%;
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+}
+
+.editSurveyH1 {
+  padding-left: 2em;
+  font-family: 'Raleway';
+}
+
+.logo img {
+  width: 100%;
+}
+
+.errorMsg {
+  color: red;
+}
+
+.userNavInfo {
+  padding-top: 40em;
+  text-align: center;
+}
+
+.welcome {
+  line-height: 2em;
+}
+
+.user {
+  font-size: 2em;
+}
+
+#addSurvey {
+  font-size: 1.4em;
+}
+
+.headerbuttons {
+  float: right;
+  margin-top: .50em;
+}
+
+#edit, #preview, #delete, #cancel{
+  padding: 1em 3em;
+  color: white;
+  font-size: 1.1em;
+  margin-right: 1em;
+}
+
+#edit {
+  background-color: #2980b9;
+}
+
+#preview {
+  background-color: #27ae60;
+}
+
+#delete, #cancel {
+  background-color: #ecf0f1;
+  color: #e74c3c;
+}
+
+.update input {
+  font-family: 'Railway';
+  padding: 1em 3em;
+  color: white;
+  font-size: 1.1em;
+  margin-right: 1em;
+  background-color: #27ae60;
+  border: none;
+}
+
+#editButtons {
+  margin-top: 2em;
+}
+
+.surveyTitleHead {
+  font-size: 3em;
+  font-weight: 600;
+  line-height: 1em;
+}
+
+#previewWrapper {
+  width: 80%;
+  line-height: 2em;
+}
+
+.container {
+  max-width: 100%;
+  margin-left: 50%;
+}
+
+.newSub {
+  font-size: 3em;
+}

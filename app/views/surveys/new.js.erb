@@ -1,0 +1,7 @@
+
+$('#main').html("<%= escape_javascript(render("new"))%>")
+
+$(".addQuestion").click(function (){
+  var newQuestion = $("#newQuestion").html();
+  $('.questionSite').append(newQuestion);
+});

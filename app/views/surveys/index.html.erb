@@ -1,0 +1,46 @@
+
+
+<div id="layout" class="content pure-g">
+    <div id="nav" class="pure-u">
+      <a href="#" class="nav-menu-button">Menu</a>
+
+        <div class="nav-inner">
+          <div class="logo">
+            <%= image_tag "empgoatwithtitle.png" %>
+          </div>
+          <button class="pure-button" id="addSurvey">
+            <span>+ Add Survey </span>
+            <%= link_to 'New Survey', new_survey_path, remote: true %>
+          </button>
+
+          <div class="pure-menu pure-menu-open">
+            <ul>
+              <li class="userNavInfo">
+                <% if current_user %>
+                  <span class="welcome">
+                    <div>Welcome</div>
+                    <span class="user"><%= current_user.name %></span>
+                    </span>
+                  <div class="logout">
+                    <button class="pure-button">
+                      <span> Logout </span>
+                    <%= link_to "Log out", sessions_log_out_path, :method => "get" %>
+                    </button>
+                  </div>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+  <div id="list" class="pure-u-1">
+    <% @surveys.each do |survey| %>
+    <%= render partial: 'survey', locals:{ survey:survey } %>
+    <% end %>
+  </div>
+
+  <div id="main" class="pure-u-1">
+      <div class="survey-content"></div>
+  </div>
+</div>

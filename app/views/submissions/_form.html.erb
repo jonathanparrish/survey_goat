@@ -1,0 +1,43 @@
+<%= form_for(@submission) do |f| %>
+  <% if @submission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+
+      <ul>
+      <% @submission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <h3>Survey Questions</h3>
+
+  <%= f.fields_for :responses do |ff| %>
+    <%= ff.hidden_field :question_id %>
+    <p>
+      <%= ff.object.question.question_text %>
+      <%= ff.object.question.description %>
+      <% if ff.object.question.question_type == "Yes/No" %>
+        <%= ff.label :response_text, "Yes", :value => "true"  %>
+        <%= ff.radio_button :response_text, true %>
+        <%= ff.label :response_text, "No", :value => "false" %>
+        <%= ff.radio_button :response_text, false, :checked => true %>
+      <% elsif ff.object.question.question_type == "Choice" %>
+        <% ff.object.question.options.each do |o| %>
+          <%= ff.label :response_text, o.option_text %>
+          <%= ff.radio_button :response_text,  :value => o.option_text %>
+        <% end %>
+      <% elsif ff.object.question.question_type == "Short Answer" %>
+        <%= ff.text_field :response_text %>
+      <% elsif ff.object.question.question_type == "Long Answer" %>
+        <%= ff.text_area :response_text %>
+    </p>
+      <% end %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

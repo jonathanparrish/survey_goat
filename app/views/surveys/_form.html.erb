@@ -1,0 +1,52 @@
+<div class="formWrapper">
+<%= form_for(@survey, remote: true) do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" id="formTitleDiv">
+    <%= f.label :title %><br>
+    <%= f.text_field( :title, :class => "text") %>
+  </div>
+  <div class="field" id="formDescDiv">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :author_id, :value => current_user.id %>
+  </div>
+
+  <h3>Questions</h3>
+
+  <%= f.fields_for :questions do |ff| %>
+    <div class="questions">
+      <p>Question Type: <%= ff.select :question_type, ["Yes/No", "Short Answer",
+            "Long Answer", "Choice"], :include_blank => true  %></p>
+            <p>Required question? <%= ff.check_box :is_required %></p>
+      <p>Question: <%= ff.text_field :question_text %></p>
+      <p>Question Description: <%= ff.text_area :description %></p>
+      <%= ff.fields_for :options do |fff| %>
+        <p>Question Option: <%= fff.text_field :option_text %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="questionSite"></div>
+  <button type="button" class="addQuestion">+ Question</button>
+
+  <div class="actions" id="editButtons">
+    <span class="update"><%= f.submit %></span>
+    <button class="pure-button" id="cancel">
+      <span>Cancel</span>
+      <%= link_to 'Back', surveys_path %>
+    </button>
+<% end %>
+  </div>
+</div>

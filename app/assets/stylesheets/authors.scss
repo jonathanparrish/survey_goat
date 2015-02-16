@@ -1,0 +1,20 @@
+// Place all the styles related to the authors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.sign-up-body {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 150px;
+}
+
+input {
+  outline: none;
+  font-family: courier;
+  padding: 10px 5px 10px 5px;
+}
+
+.button {
+  outline: none;
+  font-family: courier;
+  padding: 10px 0 10px 0;
+}

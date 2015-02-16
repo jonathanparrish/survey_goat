@@ -1,0 +1,23 @@
+// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
+// You can use CoffeeScript in this file: http://coffeescript.org/
+
+// $(function () {
+//
+//
+
+
+<% if flash[:new] %>
+var newSurvey = $("<%= escape_javascript(render(partial:"survey", locals:{survey:@survey}))%>").hide();
+$('#list').prepend(newSurvey);
+newSurvey.fadeIn();
+<% end %>
+
+
+$('#survey-<%=@survey.id%>').addClass('active')
+if (typeof lastActive !== "undefined") {
+  lastActive.removeClass('active');
+}
+var lastActive = $('#survey-<%=@survey.id%>');
+
+$('#main').html("<%= escape_javascript(render("show"))%>");
