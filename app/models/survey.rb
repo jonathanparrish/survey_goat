@@ -17,4 +17,16 @@ class Survey < ActiveRecord::Base
       q.question_type != "Choice" || q.options.length > 0
     end
   end
+
+# Number 3
+  def question_type_total
+    Question.count(:question_type, :group => 'question_type')
+  end
+
+# Number 5
+  def self.all_with_author_emails
+    self.joins(" LEFT JOIN authors ON surveys.author_id=authors.id").
+      select("title, AS author_email").all
+  end
+
 end
